@@ -4,15 +4,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout-05a12c11.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-b740888e.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-8fc6d2e9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-d714388e.js">
+		<link href="./_app/immutable/assets/_layout-5b7f6301.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-6ee1c487.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-106a4746.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-987284f6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-3aa4ee3e.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper-aa6bc0ce.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-883f75a9.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-bb25d125.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/contact/_page.svelte-7ba0208e.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/contact/_page.svelte-fed31b6a.js">
 	</head>
 	<body>
 		<div>
@@ -36,12 +37,16 @@
 <section><div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md"><h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Me</h2>
         <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">Have a comment? Want to get in touch? Reach out and let me know.</p>
         <form action="https://getform.io/f/07a31429-d42c-4efe-a66f-3c9f69a9e2ff" method="POST" class="space-y-8"><div><label for="email" class="block mb-2 text-sm font-medium">Your email</label>
-                <input type="email" name="email" placeholder="someone@example.com" class="input input-bordered text-sm w-full p-2.5 bg-base-200" required></div>
+                <input type="email" name="email" placeholder="someone@example.com" class="input input-bordered text-sm w-full p-2.5 bg-base-200">
+                </div>
             <div><label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
-                <input type="text" name="subject" placeholder="Something catchy here." class="input input-bordered text-sm w-full p-2.5 bg-base-200" required></div>
+                <input id="subject-field" type="text" name="subject" placeholder="Something catchy here." class="input input-bordered text-sm w-full p-2.5 bg-base-200">
+                </div>
             <div class="sm:col-span-2"><label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your message</label>
-                <textarea name="message" class="textarea textarea-bordered text-sm w-full p-2.5 bg-base-200" placeholder="Leave a comment..."></textarea></div>
-            <button type="submit" class="btn btn-outline">Send</button></form></div></section>
+                <textarea type="text" name="message" placeholder="Leave a comment..." class="textarea textarea-bordered text-sm w-full p-2.5 bg-base-200"></textarea>
+                </div>
+            <button type="submit" class="btn btn-outline" disabled>Send
+            </button></form></div></section>
 
 <footer class="footer items-center p-4 bg-primary text-base-content svelte-14mlfp1"><div class="grid-flow-col gap-4 place-self-center">
 		<a class="btn btn-ghost svelte-14mlfp1" href="https://www.linkedin.com/in/andrew-s-chaney"><svg class="w-6 h-6 text-black-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
@@ -52,8 +57,8 @@
 </body>
 
 
-		<script type="module" data-sveltekit-hydrate="1nld5k2">
-			import { start } from "./_app/immutable/start-b740888e.js";
+		<script type="module" data-sveltekit-hydrate="13c2jux">
+			import { start } from "./_app/immutable/start-6ee1c487.js";
 
 			start({
 				env: {},
@@ -67,7 +72,7 @@
 					form: null
 				},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1nld5k2"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="13c2jux"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
