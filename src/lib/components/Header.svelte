@@ -9,6 +9,7 @@
         </label>
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a class="navbar-text" href="/">Home</a></li>
             <li><a class="navbar-text" href="/resume">Resume</a></li>
             <li><a class="navbar-text" href="/blog">Blog</a></li>
             <li><a class="navbar-text" href="/contact">Contact Me</a></li>
