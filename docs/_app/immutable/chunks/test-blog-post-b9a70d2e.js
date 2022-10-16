@@ -1,0 +1,3 @@
+import{S as i,i as r,s as p,k as c,q as d,l as m,m as _,r as f,h as l,b as g,E as h,B as o}from"./index-8fc6d2e9.js";function u(n){let e,s;return{c(){e=c("p"),s=d(`Hello. I am just a placeholder for testing. A real blog post is coming soon and
+will be posted in my place.`)},l(t){e=m(t,"P",{});var a=_(e);s=f(a,`Hello. I am just a placeholder for testing. A real blog post is coming soon and
+will be posted in my place.`),a.forEach(l)},m(t,a){g(t,e,a),h(e,s)},p:o,i:o,o,d(t){t&&l(e)}}}const x={title:"Test Blog Post",date:"2022-10-09"};class y extends i{constructor(e){super(),r(this,e,null,u,p,{})}}export{y as default,x as metadata};

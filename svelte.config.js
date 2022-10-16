@@ -1,12 +1,18 @@
 import adapter from '@sveltejs/adapter-static';
+import autoprefixer from 'autoprefixer';
 import { mdsvex } from 'mdsvex';
 import sveltePreprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer';
+
+const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'docs',
+			assets: 'docs',
+			fallback: null
+		})
 	},
 	extensions: ['.svelte', '.md'],
 	preprocess: [
@@ -16,7 +22,7 @@ const config = {
 			},
 		}),
 		mdsvex({
-			extensions: ['.md'],
+			extensions: ['.md']
 		}),
 	],
 };
