@@ -1,11 +1,7 @@
-<script>
-    import resume from '$lib/pdf/resume.pdf';
-</script>
-
 <title>Resume</title>
 
 <div class="container">
-    <iframe title="Resume" src={resume} />
+    <iframe title="Resume" src="https://drive.google.com/file/d/1DX_qU2y7cZpu1xW-B8xUnuxE-Z45P_CD/preview?usp=sharing"/>
 </div>
 
 <style>
