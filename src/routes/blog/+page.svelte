@@ -53,4 +53,9 @@
     p {
         color: grey;
     }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>

@@ -14,7 +14,7 @@
                 <h1 class="text-4xl md:text-5xl font-bold">Hi there, I'm Andrew.</h1>
                 <p class="py-6">
                     I am a student pursuing a Bachelor's in Computer Science with a focus on systems and security at CU Boulder.
-                    In my free time you can find me working on personal projects, riding the local trails, or hanging out with my
+                    In my free time you can find me working on personal projects, riding the local trails, or spending time with my
                     wife, cats, and friends.
                     <br/><br/>
                     Want to get to know me more? Check out my blog or reach out with the button below.
