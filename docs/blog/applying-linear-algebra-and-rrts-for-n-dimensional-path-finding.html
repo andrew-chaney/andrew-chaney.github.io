@@ -5,18 +5,19 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout-c04c96cd.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/_page-92dc00e1.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-d1981a4b.js">
+		<link href="../_app/immutable/assets/_page-0be50301.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding-a7d13273.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-223126ef.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-106a4746.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-a3cb1ab6.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-b9682d99.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-3aa4ee3e.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-aa6bc0ce.js">
 		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-d6333c89.js">
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/blog/_slug_/_page.svelte-d0938d09.js">
-		<link rel="modulepreload" href="../_app/immutable/modules/pages/blog/_slug_/_page.js-bd4b7097.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page-11e2cf5d.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/blog/_slug_/_page.svelte-6099b449.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/blog/_slug_/_page.js-8bc6fe01.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-e38234d4.js">
 	</head>
 	<body>
 		<div>
@@ -37,32 +38,32 @@
 </header>
 
 <title>Blog - Linear Algebra and RRTs for N-Dimensional Path-Finding</title>
-<article class="prose container svelte-qbfw1b"><h1 class="text-4xl md:text-5xl svelte-qbfw1b">Linear Algebra and RRTs for N-Dimensional Path-Finding</h1>
-    <p class="post-date svelte-qbfw1b">Published: 2022-10-18</p>
+<article class="prose container svelte-12hl25o"><h1 class="text-4xl md:text-5xl svelte-12hl25o">Linear Algebra and RRTs for N-Dimensional Path-Finding</h1>
+    <p class="post-date svelte-12hl25o">Published: 2022-10-18</p>
     <p>There are many path-finding algorithms for a whole slew of applications. Many are commonly discussed such as breadth-first search, depth-first search, Dijkstra’s, A*, Bellman-Ford, and more. Some more optimal and efficient than others, but all crucial to the advancement of path-finding and graph traversal in the field of computer science. These algorithms permeated into other areas where we now use them in our everyday lives, with tools such as GPS navigation while driving or even looking up a file on our computers. However, as powerful as they are, these algorithms are hard, and many inefficient, to implement outside of a 2-dimensional space. Some applications, such as mapping a road, are just fine remaining in 2-dimensions, but there are many problems that need to be solved that have n-dimensions exceeding just 2. </p>
 <p>Rapidly-exploring Random Trees (RRTs) fill this void. A RRT is a search algorithm that efficiently searches nonconvex, n-dimensional spaces by branching out and exploring that space. That’s a lot to define. First, what does searching a nonconvex, n-dimensional space look like and mean? </p>
 <p>N-dimensional spaces are spaces that have an undefined dimension. In designing algorithms to accomodate more than just a single dimension we are creating a solution that is modular and scalable.  A convex set in geometry and linear algebra is a subset of the euclidean space in which a line XY connecting points X and Y in the set lies entirely within that set. More simply, you are at a point A and you need to get to a point B. If you can walk from A to B in a straight line then this is a convex set. Inversely, a nonconvex set is one where a valid path from A to B is not possible with just a straight line.</p>
-<img src="/_app/immutable/assets/convex_vs_nonconvex-0598ddcb.jpg" alt="Convex vs. Non-Convex">
+<img src="/_app/immutable/assets/convex_vs_nonconvex-0598ddcb.jpg" alt="Convex vs. Non-Convex" class="svelte-jq7gac">
 <p>Now that we know we are dealing with getting from point A to point B in a nonconvex set, how do we go about implementing RRT to get a valid path?</p>
 <h1>Getting the Next Point</h1>
 <p>Before we can go about finding a path from point A to point B we have to be able to go from one point to the next. We can start by defining a valid 2-dimensional solution and then rebuilding it as an n-dimensional model.</p>
 <h3>2-D Point Creation</h3>
 <p>We are going to assume that our result is valid, and this is because following the creation of a point in our algorithm we will ensure its validity. Knowing that we want to get from A to B and that we are in a convex set we likely won’t be able to travel the full distance from our current position to the goal position. We will choose a portion of this distance and refer to it as <code>delta_q</code>, meaning that if a distance from our current point to the next point is greater than <code>delta_q</code> then that distance will be reduced to a distance of <code>delta_q</code>. An example of A and B in a cartesian space may look like:</p>
-<img src="/_app/immutable/assets/ab_example-40460980.png" alt="AB Example">
+<img src="/_app/immutable/assets/ab_example-40460980.png" alt="AB Example" class="svelte-jq7gac">
 <p>We will say that our start position is A = (0,0) and our goal position is B = (6,4), and we will treat these not as ordered coordinate pairs but as vectors. How do we get from A to a distance, at most, <code>delta_q</code> away from A on the path to B? There are several things that we need to compute first:</p>
 <ol><li><code>V</code> , a new vector from B - A.</li>
 <li><code>||V||</code>, The euclidean norm of <code>V</code>. Note that the norm of a vector in a normed vector space is also the magnitude.</li>
 <li>The unit vector of our new vector.</li></ol>
 <p>Now that we know what we need to compute for we can apply it in a general formula:</p>
-<img src="/_app/immutable/assets/2d_general-2fcbf408.png" alt="2D General">
-Applying this to our current points A and B with a value of `delta_q = 2`we get:
-<img src="/_app/immutable/assets/2d_applied-3d35ed6d.png" alt="2D Applied">
+<img src="/_app/immutable/assets/2d_general-2fcbf408.png" alt="2D General" class="svelte-jq7gac">
+<p>Applying this to our current points A and B with a value of <code>delta_q = 2</code> we get:</p>
+<img src="/_app/immutable/assets/2d_applied-4f1f5156.png" alt="2D Applied" class="svelte-jq7gac">
 Which, when applied to our graph, looks like:
-<img src="/_app/immutable/assets/2d_res_graphed-09039560.png" alt="2D Results Graphed">
-This means that our next point is the purple point on the path from A to B.
+<img src="/_app/immutable/assets/2d_res_graphed-09039560.png" alt="2D Results Graphed" class="svelte-jq7gac">
+<p>This means that our next point is the purple point on the path from A to B.</p>
 <h3>Expanding to n-Dimensions</h3>
 <p>Now that we have our working formula it is relatively easy to expand it to n-dimensions. We are already working with vectors which are n-dimensional. By opening up the formula to accept n-dimensions with our goal point being vector G and our starting point being vector S we get:</p>
-<img src="/_app/immutable/assets/nd_formula-f3b04a6d.png" alt="N-Dimensional Formula">
+<img src="/_app/immutable/assets/nd_formula-f3b04a6d.png" alt="N-Dimensional Formula" class="svelte-jq7gac">
 <h3>Observations</h3>
 <p>It is important to note that this formula is only applied when the euclidean distance from our starting point to our goal point exceeds the value of <code>delta_q</code>, whatever we may set that to. Also, you may have noticed that this only creates points in a straight line along the path from our start point to the end point. How does this help us in a nonconvex space?</p>
 <h1>Introducing Randomness</h1>
@@ -104,8 +105,8 @@ func rrt(starting_point, goal_point, num_samples, nodes, delta_q):
 				break
 	return nodes</code><!-- HTML_TAG_END --></pre>
 <p>Once fully implemented, this RRT can successfully search a given space. It can even be modified to solely explore without having a given goal point. Here is a picture of the algorithm searching a space and finding a goal while avoiding obstacles.</p>
-<img src="/_app/immutable/assets/rrt_run-c9db2607.png" alt="RRT Run">
-<img src="/_app/immutable/assets/rrt_goal_run-e6191554.png" alt="RRT Goal Run">
+<img src="/_app/immutable/assets/rrt_run-c9db2607.png" alt="RRT Run" class="svelte-jq7gac">
+<img src="/_app/immutable/assets/rrt_goal_run-e6191554.png" alt="RRT Goal Run" class="svelte-jq7gac">
 <h1>Real World Applications</h1>
 <p>RRT is commonly applied in motion planning for robotics and autonomous driving where there are numerous dimensions to consider. Linear algebra can be applied to get distances between not only physical objects, but also any sort of reading that you choose to apply it to. Linear algebra, for example, is the basis of artificial intelligence, neural networks, and machine learning. Efficiency in algorithms is what enables further jumps in science not only in areas like autonomous driving, but also in gene and disease research.</p>
 <h1>RRT Variations and Concluding Remarks</h1>
@@ -126,8 +127,8 @@ func rrt(starting_point, goal_point, num_samples, nodes, delta_q):
 </body>
 
 
-		<script type="module" data-sveltekit-hydrate="6r8z5m">
-			import { start } from "../_app/immutable/start-d1981a4b.js";
+		<script type="module" data-sveltekit-hydrate="awalqj">
+			import { start } from "../_app/immutable/start-223126ef.js";
 
 			start({
 				env: {},
@@ -141,7 +142,7 @@ func rrt(starting_point, goal_point, num_samples, nodes, delta_q):
 					form: null
 				},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="6r8z5m"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="awalqj"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
