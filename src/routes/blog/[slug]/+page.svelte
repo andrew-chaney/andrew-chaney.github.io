@@ -2,8 +2,8 @@
     export let data;
 </script>
 
+<title>Blog - {data.title}</title>
 <article class="prose container">
-    <title>Blog - {data.title}</title>
     <h1 class="text-4xl md:text-5xl">{data.title}</h1>
     <p class="post-date">Published: {data.date}</p>
     <svelte:component this={data.content}/>

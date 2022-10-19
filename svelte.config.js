@@ -3,7 +3,7 @@ import autoprefixer from 'autoprefixer';
 import { mdsvex } from 'mdsvex';
 import sveltePreprocess from 'svelte-preprocess';
 
-/** @type {import('@sveltejs/kit').Config} */
+// /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter({
