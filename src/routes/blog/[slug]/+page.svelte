@@ -14,6 +14,7 @@
         margin-left: 5%;
         margin-right: 5%;
         margin-bottom: 4em;
+        max-width: 95vw;
         width: fit-content;
         overflow-x: hidden;
         overflow-wrap: normal;

@@ -36,12 +36,16 @@ We will say that our start position is A = (0,0) and our goal position is B = (6
 3. The unit vector of our new vector.
 
 Now that we know what we need to compute for we can apply it in a general formula:
+
 <img src={gen} alt="2D General">
-Applying this to our current points A and B with a value of `delta_q = 2`we get:
-![2D Applied]({applied})
+
+Applying this to our current points A and B with a value of `delta_q = 2` we get:
+
 <img src={applied} alt="2D Applied">
 Which, when applied to our graph, looks like:
+
 <img src={graphed} alt="2D Results Graphed">
+
 This means that our next point is the purple point on the path from A to B.
 
 ### Expanding to n-Dimensions
@@ -116,3 +120,11 @@ The RRT implementation introduced here is not optimal, it is the base implementa
 * Parallelized RRT utilizes parallelization to search for valid paths in less time.
 
 These are just several examples of how RRT can not only be implemented, but optimized. Being able to traverse multiple dimensions of input and data for optimal paths and states has helped us advance the field of robotics and autonomous driving. What further optimizations can be made, and where will it take us next?
+
+<style>
+	img {
+		max-width: 80vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
