@@ -19,7 +19,7 @@ There are many path-finding algorithms for a whole slew of applications. Many ar
 Rapidly-exploring Random Trees (RRTs) fill this void. A RRT is a search algorithm that efficiently searches nonconvex, n-dimensional spaces by branching out and exploring that space. That's a lot to define. First, what does searching a nonconvex, n-dimensional space look like and mean? 
 
 N-dimensional spaces are spaces that have an undefined dimension. In designing algorithms to accomodate more than just a single dimension we are creating a solution that is modular and scalable.  A convex set in geometry and linear algebra is a subset of the euclidean space in which a line XY connecting points X and Y in the set lies entirely within that set. More simply, you are at a point A and you need to get to a point B. If you can walk from A to B in a straight line then this is a convex set. Inversely, a nonconvex set is one where a valid path from A to B is not possible with just a straight line.
-![Convex vs. Non-Convex]({c_vs_nc})
+<img src={c_vs_nc} alt="Convex vs. Non-Convex">
 
 Now that we know we are dealing with getting from point A to point B in a nonconvex set, how do we go about implementing RRT to get a valid path?
 
@@ -28,7 +28,7 @@ Before we can go about finding a path from point A to point B we have to be able
 
 ### 2-D Point Creation
 We are going to assume that our result is valid, and this is because following the creation of a point in our algorithm we will ensure its validity. Knowing that we want to get from A to B and that we are in a convex set we likely won't be able to travel the full distance from our current position to the goal position. We will choose a portion of this distance and refer to it as `delta_q`, meaning that if a distance from our current point to the next point is greater than `delta_q` then that distance will be reduced to a distance of `delta_q`. An example of A and B in a cartesian space may look like:
-![AB Example]({ab_example})
+<img src={ab_example} alt="AB Example">
 
 We will say that our start position is A = (0,0) and our goal position is B = (6,4), and we will treat these not as ordered coordinate pairs but as vectors. How do we get from A to a distance, at most, `delta_q` away from A on the path to B? There are several things that we need to compute first:
 1. `V` , a new vector from B - A.
@@ -36,16 +36,17 @@ We will say that our start position is A = (0,0) and our goal position is B = (6
 3. The unit vector of our new vector.
 
 Now that we know what we need to compute for we can apply it in a general formula:
-![2D General]({gen})
+<img src={gen} alt="2D General">
 Applying this to our current points A and B with a value of `delta_q = 2`we get:
 ![2D Applied]({applied})
+<img src={applied} alt="2D Applied">
 Which, when applied to our graph, looks like:
-![2D Results Graphed]({graphed})
+<img src={graphed} alt="2D Results Graphed">
 This means that our next point is the purple point on the path from A to B.
 
 ### Expanding to n-Dimensions
 Now that we have our working formula it is relatively easy to expand it to n-dimensions. We are already working with vectors which are n-dimensional. By opening up the formula to accept n-dimensions with our goal point being vector G and our starting point being vector S we get:
-![N-Dimensional Formula]({nd_form})
+<img src={nd_form} alt="N-Dimensional Formula">
 
 ### Observations
 It is important to note that this formula is only applied when the euclidean distance from our starting point to our goal point exceeds the value of `delta_q`, whatever we may set that to. Also, you may have noticed that this only creates points in a straight line along the path from our start point to the end point. How does this help us in a nonconvex space?
@@ -60,7 +61,7 @@ Depending on your goal, space, and other factors you can introduce randomness in
 
 # Building a RRT
 
-We have our formulas and needed variables, now let's implement a RRT in pseudo-code. The code rendering may look weird on mobile.
+We have our formulas and needed variables, now let's implement a RRT in pseudo-code.
 
 ```
 Auxiliary Functions (the implementation of these vary by use-case):
@@ -98,8 +99,8 @@ func rrt(starting_point, goal_point, num_samples, nodes, delta_q):
 ```
 
 Once fully implemented, this RRT can successfully search a given space. It can even be modified to solely explore without having a given goal point. Here is a picture of the algorithm searching a space and finding a goal while avoiding obstacles.
-![RRT Run]({rrt_r})
-![RRT Goal]({rrt_g})
+<img src={rrt_r} alt="RRT Run">
+<img src={rrt_g} alt="RRT Goal Run">
 
 # Real World Applications
 
