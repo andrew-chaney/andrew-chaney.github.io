@@ -79,7 +79,7 @@
                 />
                 {#if $message_validity.dirty && !$message_validity.valid}
                 <span class="label-text-alt text-error">
-                    Please enter a subject.
+                    Please enter a message.
                 </span>
                 {/if}
             </div>
