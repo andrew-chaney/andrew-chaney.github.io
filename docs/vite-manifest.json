@@ -3,14 +3,6 @@
     "file": "_app/immutable/assets/me-9a5bca2d.jpg",
     "src": "src/lib/images/me.jpg"
   },
-  "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/convex_vs_nonconvex.jpg": {
-    "file": "_app/immutable/assets/convex_vs_nonconvex-0598ddcb.jpg",
-    "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/convex_vs_nonconvex.jpg"
-  },
-  "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_res_graphed.png": {
-    "file": "_app/immutable/assets/2d_res_graphed-09039560.png",
-    "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_res_graphed.png"
-  },
   "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_general.png": {
     "file": "_app/immutable/assets/2d_general-2fcbf408.png",
     "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_general.png"
@@ -23,25 +15,33 @@
     "file": "_app/immutable/assets/2d_applied-4f1f5156.png",
     "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_applied.png"
   },
+  "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/convex_vs_nonconvex.jpg": {
+    "file": "_app/immutable/assets/convex_vs_nonconvex-0598ddcb.jpg",
+    "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/convex_vs_nonconvex.jpg"
+  },
+  "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_res_graphed.png": {
+    "file": "_app/immutable/assets/2d_res_graphed-09039560.png",
+    "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/2d_res_graphed.png"
+  },
   "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/nd_formula.png": {
     "file": "_app/immutable/assets/nd_formula-f3b04a6d.png",
     "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/nd_formula.png"
-  },
-  "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/rrt_run.png": {
-    "file": "_app/immutable/assets/rrt_run-c9db2607.png",
-    "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/rrt_run.png"
   },
   "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/rrt_goal_run.png": {
     "file": "_app/immutable/assets/rrt_goal_run-e6191554.png",
     "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/rrt_goal_run.png"
   },
+  "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/rrt_run.png": {
+    "file": "_app/immutable/assets/rrt_run-c9db2607.png",
+    "src": "src/lib/blog_images/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding/rrt_run.png"
+  },
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-223126ef.js",
+    "file": "_app/immutable/start-0840f52a.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
       "_index-106a4746.js",
-      "_singletons-b9682d99.js",
+      "_singletons-22c06139.js",
       "_preload-helper-aa6bc0ce.js"
     ],
     "dynamicImports": [
@@ -66,12 +66,12 @@
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
-    "file": "_app/immutable/components/error.svelte-e5a819c7.js",
+    "file": "_app/immutable/components/error.svelte-73c3b71e.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
     "isEntry": true,
     "imports": [
       "_index-106a4746.js",
-      "_singletons-b9682d99.js"
+      "_singletons-22c06139.js"
     ]
   },
   "src/routes/+page.svelte": {
@@ -111,7 +111,7 @@
     ]
   },
   "src/routes/contact/+page.svelte": {
-    "file": "_app/immutable/components/pages/contact/_page.svelte-fed31b6a.js",
+    "file": "_app/immutable/components/pages/contact/_page.svelte-4f8bfb8a.js",
     "src": "src/routes/contact/+page.svelte",
     "isEntry": true,
     "imports": [
@@ -155,8 +155,8 @@
       "__page-e38234d4.js"
     ]
   },
-  "_singletons-b9682d99.js": {
-    "file": "_app/immutable/chunks/singletons-b9682d99.js",
+  "_singletons-22c06139.js": {
+    "file": "_app/immutable/chunks/singletons-22c06139.js",
     "imports": [
       "_index-3aa4ee3e.js"
     ]
@@ -198,7 +198,7 @@
     ]
   },
   ".svelte-kit/generated/nodes/1.js": {
-    "file": "_app/immutable/chunks/1-793ae07c.js",
+    "file": "_app/immutable/chunks/1-7dac6e38.js",
     "src": ".svelte-kit/generated/nodes/1.js",
     "isDynamicEntry": true,
     "imports": [
@@ -232,7 +232,7 @@
     ]
   },
   ".svelte-kit/generated/nodes/5.js": {
-    "file": "_app/immutable/chunks/5-966e5aa8.js",
+    "file": "_app/immutable/chunks/5-b051444e.js",
     "src": ".svelte-kit/generated/nodes/5.js",
     "isDynamicEntry": true,
     "imports": [
@@ -272,21 +272,21 @@
     "file": "_app/immutable/assets/_page-0be50301.css",
     "src": "src/routes/blog/[slug]/+page.css"
   },
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page-ea87455f.css",
+    "src": "src/routes/+page.css"
+  },
   "src/routes/blog/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding.css": {
     "file": "_app/immutable/assets/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding-a7d13273.css",
     "src": "src/routes/blog/applying-linear-algebra-and-rrts-for-n-dimensional-path-finding.css"
-  },
-  "src/routes/blog/+page.css": {
-    "file": "_app/immutable/assets/_page-c2eab52d.css",
-    "src": "src/routes/blog/+page.css"
   },
   "src/routes/resume/+page.css": {
     "file": "_app/immutable/assets/_page-853a8757.css",
     "src": "src/routes/resume/+page.css"
   },
-  "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page-ea87455f.css",
-    "src": "src/routes/+page.css"
+  "src/routes/blog/+page.css": {
+    "file": "_app/immutable/assets/_page-c2eab52d.css",
+    "src": "src/routes/blog/+page.css"
   },
   "src/routes/+layout.css": {
     "file": "_app/immutable/assets/_layout-c04c96cd.css",
