@@ -1,7 +1,7 @@
 <title>Resume</title>
 
 <div class="container">
-    <iframe title="Resume" src="https://drive.google.com/file/d/1DX_qU2y7cZpu1xW-B8xUnuxE-Z45P_CD/preview?usp=sharing"/>
+    <iframe title="Resume" src="https://drive.google.com/file/d/1II-npdODRCN71hS6ZZBz5YbEyfi-Xqx7/preview?usp=sharing"/>
 </div>
 
 <style>
